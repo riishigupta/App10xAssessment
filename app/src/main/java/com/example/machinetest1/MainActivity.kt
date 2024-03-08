@@ -167,6 +167,7 @@ class MainActivity : AppCompatActivity() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.slide_from_bottom)
         mBinding.recyclerView.startAnimation(animation)
 
+
     }
 
     fun kelvinToCelsius(kelvin: Double): Double {
