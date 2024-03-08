@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomBorderTextInputEditText" parent="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="boxStrokeColor">@color/grey949BA5</item>
+        <item name="hintTextColor">@color/black</item>
+    </style>
+</resources>

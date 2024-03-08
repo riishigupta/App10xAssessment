@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivprofile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ivprofile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="24dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/viewTop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewTop">
+
+
+            <ImageView
+                android:id="@+id/ivprofileimg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Test User"
+            android:textColor="@color/_212226"
+            android:textFontWeight="800"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvEmail"
+            app:layout_constraintStart_toEndOf="@+id/ivprofile"
+            app:layout_constraintTop_toTopOf="@+id/ivprofile" />
+        |
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test123@example.com"
+            android:textFontWeight="400"
+            android:textSize="13sp"
+
+            app:layout_constraintBottom_toBottomOf="@id/ivprofile"
+            app:layout_constraintStart_toStartOf="@+id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/new_backgroud"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewTop">
+
+            <TextView
+                android:id="@+id/tvUserList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/user_list"
+                android:textColor="@color/_212226"
+                android:textFontWeight="900"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/gridAdapter"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_for_edittext"
+                app:layout_constraintBottom_toBottomOf="@+id/tvUserList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvUserList" />
+
+            <ImageView
+                android:id="@+id/ivlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_list_blue"
+                app:layout_constraintBottom_toBottomOf="@id/gridAdapter"
+                app:layout_constraintEnd_toStartOf="@id/ivGrid"
+                app:layout_constraintStart_toStartOf="@id/gridAdapter"
+                app:layout_constraintTop_toTopOf="@id/gridAdapter" />
+
+            <ImageView
+                android:id="@+id/ivGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_grid"
+                app:layout_constraintBottom_toBottomOf="@id/gridAdapter"
+                app:layout_constraintEnd_toEndOf="@id/gridAdapter"
+                app:layout_constraintStart_toEndOf="@id/ivlist"
+                app:layout_constraintTop_toTopOf="@id/gridAdapter" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridAdapter"
+                tools:listitem="@layout/rv_grid_view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
